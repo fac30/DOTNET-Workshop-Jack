@@ -28,14 +28,14 @@ public class GamesController : ControllerBase
             },
              new Game{
                id = 2,
-               teamOneName="Leeds",
-               teamTwoName="London",
+               teamOneName="Alex Honnold",
+               teamTwoName="Adam Ondra",
                winner =2  
             },
              new Game{
                id = 3,
-               teamOneName="London",
-               teamTwoName="Manchester",
+               teamOneName="Slayer",
+               teamTwoName="Celtic Frost",
                winner =1  
             },
         };
@@ -56,11 +56,15 @@ public class GamesController : ControllerBase
 return games;
     }
     
-//         [HttpDelete]
-//         public IEnumerable<Game> Delete( int id)
-//         {
-//   // write code that delets the game with the id sent to the API then returns a list of games
-//         }
+        [HttpDelete]
+        public IEnumerable<Game> Delete( int id)
+        {
+  // write code that delets the game with the id sent to the API then returns a list of games
+  games.RemoveAll(game => game.id == id);
+
+  return games;
+
+        }
 //                 [HttpPost]
 //         public IEnumerable<Game>  AddGame( Game game)
 //         {
