@@ -56,7 +56,7 @@ public class GamesController : ControllerBase
 return games;
     }
     
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IEnumerable<Game> Delete( int id)
         {
   // write code that delets the game with the id sent to the API then returns a list of games
