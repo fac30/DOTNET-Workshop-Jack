@@ -65,9 +65,11 @@ return games;
   return games;
 
         }
-//                 [HttpPost]
-//         public IEnumerable<Game>  AddGame( Game game)
-//         {
-// // write code that adds the game posted to this route then displays the list of games
-//         }
+                [HttpPost]
+        public IEnumerable<Game>  AddGame( Game game)
+        {
+            games.Add(game);
+
+            return games;
+        }
 }
